@@ -38,8 +38,6 @@
   * _your new resource will have a reference to the primary resource that we already have functional_
   * _that resource will need to be passed via the `req.body`_
 * `GET` - `/api/new-resource/:_id`
-* `PUT` - `/api/new-resource/:_id`
-* `DELETE` - `/api/new-resource/:_id`
 
 ## Tests
 * create a test to ensure that your API returns a status code of 404 for routes that have not been registered
@@ -47,10 +45,6 @@
 * `GET` - test **200**, for a request made with a valid id
 * `GET` - test **401**, if no token was provided
 * `GET` - test **404**, for a valid request with an id that was not found
-* `PUT` - test **200**, for a post request with a valid body
-* `PUT` - test **401**, if no token was provided
-* `PUT` - test **400**, if the body was invalid
-* `PUT` - test **404**, for a valid request made with an id that was not found
 * `POST` - test **200**, for a post request with a valid body
 * `POST` - test **401**, if no token was provided
 * `POST` - test **400**, if no body was provided or if the body was invalid
@@ -64,9 +58,9 @@
   var params = {
     Bucket: 's3-bucket-name',
     Key: 'object-filename'
-  }
+  } 
   s3.deleteObject(params)
   ```
 * don't forget to remove the resource from the DB
 
-
+*Try implementing `PUT` - `/api/new-resource/:_id` - It will follow many of the same patterns of the `POST` and `DELETE`.
